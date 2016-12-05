@@ -7,16 +7,11 @@ import pyperclip
 class StringVarDemo:
     def __init__(self, rootWin):
 
-        #A StringVar is a special object that holds strings and
-        #can be linked to a GUI element such as an Entry.
         self.sv = StringVar()
       
-        #Create a entry and button to put in the root window!
-        self.entry = Entry(rootWin, textvariable=self.sv)
+       self.entry = Entry(rootWin, textvariable=self.sv)
         self.entry.pack()
-        #Add some text:
-        #self.sv.set("Here is some text!")
-      
+              
 
         self.button = Button(rootWin, text="Search", command=self.search)
         self.button.pack()
@@ -46,10 +41,7 @@ class StringVarDemo:
             mb.showinfo("Oops", "No match - correct spelling & form?")
 
         else:
-            #print(teacherEmail)
-            #for i in range(0, len(teacherEmail)):
-                #print(teacherEmail[i])
-
+            
             pyperclip.copy(','.join(teacherEmail))
             mb.showinfo("Success !","Teachers found ! - emails copied to clipboard")
 
